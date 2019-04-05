@@ -1,0 +1,16 @@
+h2{
+  color: rgb(4, 201, 4);
+  text-align: center;
+  font-size: 30px;
+}
+.registerform-div{
+  font-size: 15px;
+  color: grey;
+  background-color: white;
+  margin: 50px auto;
+  width: 60%;
+  padding: 10px;
+}
+.collapsible{
+  width: 100%;
+}

@@ -1,0 +1,37 @@
+
+<div class="loginform-div">
+  <h2>Login</h2>
+  <hr>
+<form class="container" [formGroup]= " forms" (ngSubmit)= "onSubmit(forms.value)" style="box-shadow: 0 0 10px gray ">
+    <label>
+        EMAIL ADDRESS<br>
+             <input type = "email" placeholder="email" name="email" formControlName = "email">
+       </label>
+       <!-- here i used email validation -->
+           <div *ngIf="forms.get('email').invalid && (forms.get('email').dirty || forms.get('email').touched)"
+                class="alert">
+                 <div *ngIf="forms.get('email').errors.required">
+                   Email is required.
+                 </div>
+                 <div *ngIf="!forms.get('email').errors.required">
+                  Email is invalid.
+                 </div>
+           </div><br>
+           <label>
+             <!-- here i used password validation -->
+              PASSWORD<br>
+              <input type = "password" placeholder="password" name="password" formControlName = "password">
+            </label>
+            <div *ngIf="forms.get('password').invalid && (forms.get('password').dirty || forms.get('password').touched)"
+              class="alert">
+              <div *ngIf="forms.get('password').errors.required">
+                Password is required.
+              </div>
+            </div>
+            <!-- here is our login button -->
+            <button type = "submit" [disabled]= "!forms.valid" value="submit">Login</button><br>
+            </form>
+            <div class="loginNavigation">
+                <a routerLink="/registration" routerLinkActive="active">not register user?</a>
+              </div>
+            </div>

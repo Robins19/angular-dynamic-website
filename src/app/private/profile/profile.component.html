@@ -1,0 +1,81 @@
+<app-navbar>
+
+</app-navbar>
+<div class="registerform-div">
+  <form class="container" [formGroup]=" forms" (ngSubmit)="onSubmit(forms.value)" style="box-shadow: 0 0 10px gray ">
+    <!-- here we used image tag to display our image on profile  -->
+    <img src="./assets/image/164860.png" id="Profile-Icon-Image">
+    <div class="row">
+      <div class="col">
+        <label>
+          FULL NAME <br>
+          <input type="text" placeholder="fullName" name="fullName" formControlName="fullName">
+        </label>
+        <!-- here we used fullname validation -->
+        <div *ngIf="forms.get('fullName').invalid && (forms.get('fullName').dirty || forms.get('fullName').touched)"
+          class="alert">
+          <div *ngIf="forms.get('fullName').errors.required">
+            Fullname is required.
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <label>
+          EMAIL ADDRESS<br>
+          <input type="email" placeholder="email" name="email" formControlName="email">
+        </label>
+        <!-- here we used email validation -->
+        <div *ngIf="forms.get('email').invalid && (forms.get('email').dirty || forms.get('email').touched)"
+          class="alert">
+          <div *ngIf="forms.get('email').errors.required">
+            Email is required.
+          </div>
+          <div *ngIf="!forms.get('email').errors.required">
+            Email is invalid.
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label>
+          PHONE NO<br>
+          <input type="phonenumber" placeholder="phonenumber" name="phonenumber" formControlName="phonenumber">
+        </label>
+        <!--here we used phonenumber validation  -->
+        <div *ngIf="forms.get('phonenumber').invalid && (forms.get('phonenumber').dirty || registerForm.get('phonenumber').touched)"
+          class="alert">
+          <div *ngIf="forms.get('phonenumber').errors.required">
+            Phone no is required.
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <label>
+          ADDRESS<br>
+          <input type="address" placeholder="address" name="address" formControlName="address">
+        </label>
+        <!-- here we used address validation -->
+        <div *ngIf="forms.get('address').invalid && (forms.get('address').dirty || forms.get('address').touched)"
+          class="alert">
+          <div *ngIf="forms.get('address').errors.required">
+            Address is required.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label>
+          BREIF MEDICAL HISTORY (OPTIONAL)<br>
+          <input type="MedicalHistory" placeholder="MedicalHistory" name="MedicalHistory"
+            formControlName="MedicalHistory">
+        </label>
+      </div>
+      <!-- here update button  -->
+      <div class="col">
+        <button type="submit" [disabled]="!forms.valid" value="submit">Update</button><br>
+      </div>
+
+    </div>

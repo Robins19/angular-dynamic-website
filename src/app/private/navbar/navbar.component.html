@@ -1,0 +1,17 @@
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link " >WebsiteName</a>
+  </li>
+  <li  class="nav-item dropdown" >
+    <!-- here i display dropdown name using interpolation -->
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{dropdownName}}<img src = "./assets/image/164860.png"id="dropdown-image-icon"></a>
+    <div  class="dropdown-menu">
+      <a class="dropdown-item" routerLinkActive="active" routerLink="/profile" > <img src = "./assets/image/164860.png"id="dropdown-image-icon"><span>{{dropdownName}}</span></a>
+      <!-- here i display number of count of booking -->
+      <a class="dropdown-item" routerLinkActive="active" routerLink="/mybooking">MyBooking {{count}}</a>
+      <a class="dropdown-item" routerLinkActive="active" routerLink="/faq">FAQ</a>
+      <a class="dropdown-item" routerLinkActive="active" (click)=" Logout()">Logout</a>
+    </div>
+  </li>
+</ul>
+<h2><p class="dynamicHeader">{{header}}</p></h2>
